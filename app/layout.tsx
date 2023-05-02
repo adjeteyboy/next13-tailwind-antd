@@ -1,4 +1,8 @@
 import './globals.css'
+
+
+import './globals.css'
+import AntdConfigProvider from '@/app/components/providers/antdProvider'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -15,7 +19,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AntdConfigProvider>
+
+          {children}
+
+        </AntdConfigProvider>
+      </body>
     </html>
   )
 }
